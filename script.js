@@ -17,7 +17,7 @@ function sectomin(seconds) {
 
 async function getSongs(folder) {
     currfolder = folder
-    let a = await fetch(`/songs/${folder}`)
+    let a = await fetch(`https://github.com/the-sukhsingh/spotify-clone/tree/6af65ba8b04e93c43ad054003ea4982d871453dd/songs/${folder}`)
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
@@ -52,7 +52,7 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `/songs/` + currfolder + "/" + track
+    currentSong.src = `https://github.com/the-sukhsingh/spotify-clone/tree/6af65ba8b04e93c43ad054003ea4982d871453dd/songs` + currfolder + "/" + track
     console.log(currfolder)
     console.log(currentSong.src)
     if (!pause) {
@@ -64,7 +64,7 @@ const playMusic = (track, pause = false) => {
 }
 
 async function dispalbm() {
-    let b = await fetch(`/songs/`)
+    let b = await fetch(https://github.com/the-sukhsingh/spotify-clone/tree/6af65ba8b04e93c43ad054003ea4982d871453dd/songs)
     let res = await b.text()
     let d = document.createElement("div")
     d.innerHTML = res
@@ -88,7 +88,7 @@ async function dispalbm() {
                                         stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            <img src='/songs/${folder}/cover.jpg' alt="">
+                            <img src='https://github.com/the-sukhsingh/spotify-clone/tree/6af65ba8b04e93c43ad054003ea4982d871453dd/songs/${folder}/cover.jpg' alt="">
                             <h2>${res.title}</h2>
                             <p>${res.description}</p>
                         </div>`
