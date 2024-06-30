@@ -17,7 +17,7 @@ function sectomin(seconds) {
 
 async function getSongs(folder) {
     currfolder = folder
-    let a = await fetch(`https://api.github.com/repos/the-sukhsingh/spotify-clone/contents/songs/ninja/${folder}`)
+    let a = await fetch(`https://api.github.com/repos/the-sukhsingh/spotify-clone/contents/songs/${folder}`)
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
