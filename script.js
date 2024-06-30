@@ -17,7 +17,7 @@ function sectomin(seconds) {
 
 async function getSongs(folder) {
     currfolder = folder
-    let a = await fetch(`http://127.0.0.1:3000/songs/${folder}`)
+    let a = await fetch(`./songs/${folder}`)
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
@@ -52,7 +52,7 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `http://127.0.0.1:3000/songs/` + currfolder + "/" + track
+    currentSong.src = `./songs/` + currfolder + "/" + track
     console.log(currfolder)
     console.log(currentSong.src)
     if (!pause) {
@@ -64,7 +64,7 @@ const playMusic = (track, pause = false) => {
 }
 
 async function dispalbm() {
-    let b = await fetch(`http://127.0.0.1:3000/songs/`)
+    let b = await fetch(`./songs/`)
     let res = await b.text()
     let d = document.createElement("div")
     d.innerHTML = res
